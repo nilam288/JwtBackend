@@ -1,43 +1,43 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from'react-redux';
-import {getFootwares} from '../action/FootwareAction';
 import PropTypes from 'prop-types';
+//import {deleteProject} from "../../action/ProjectActions";
 
 class FootwareItem extends Component {
-
-  componentDidMount(){
-    this.props.getFootwares();
-  }
-  
+   
   render() {
-    const {footwares} =this.props.footwares;
+      //  const {footware} = this.props;
+
+        let footware={};
+    if(this.props)
+    {
+      footware= this.props;
+
+    }
+
+
+        console.log("fooootare.........."+footware);
     return (
-     <div className="projects">
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <h1 className="display-4 text-center">Footwares</h1>
-                    <br />
-                    <br />
-                    <hr />
-                    {footwares.map(footware =>(
-                        <FootwareItem key={footware.id} footware={footware}/>
-                    ))}        
-         </div>
-        </div>
-       </div>
-     </div>
-    );
+      <div className="container">
+                        <div className="card card-body bg-light mb-3">
+                            <div className="row">
+                                <div className="col-2">
+                                    <span className="mx-auto">{footware.id}</span>
+                                    console.log("id....."+{footware.id});
+                                </div>
+                                <div className="col-lg-6 col-md-4 col-8">
+                                     <h3>{footware.name}</h3>
+                                    <p>{footware.category}</p>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                );
   }
 }
 
-FootwareItem.propTypes = {
-  footwares: PropTypes.object.isRequired,
-  getFootwares: PropTypes.func.isRequired
-};
-const mapStateToProps = state => ({
-  footwares: state.footwares
-});
-
-export default connect (mapStateToProps ,{ getFootwares })(FootwareItem);
-
+/*FootwareItem.propTypes = {
+  deleteProject: PropTypes.func.isRequired
+};*/
+export default FootwareItem;

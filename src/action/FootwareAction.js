@@ -3,7 +3,7 @@ import {GET_ERRORS,GET_FOOTWARES,GET_FOOTWARE,DELETE_FOOTWARE} from './types';
 
 export const createProject=(product,history)=>async dispatch=>{
 try{
-const res=await axios.post("http://localhost:8080/SpringReact/products",product);
+const res=await axios.post("http://localhost:8080/SpringReact/footwares",product);
 history.push("/Footware");
 }catch(error){
 dispatch({
@@ -14,7 +14,8 @@ payload:error.response.data
 };
 
 export const getFootwares=()=>async dispatch=>{
-const res=await axios.get("http://localhost:8080/SpringReact/products");
+const res=await axios.get("http://localhost:8080/SpringReact/footwares");
+console.log("res......."+JSON.stringify(res));
 dispatch({
 type:GET_FOOTWARES,
 payload:res.data
@@ -22,7 +23,7 @@ payload:res.data
 };
 
 export const getFootware = (id,history)=>async dispatch=>{
-const res= await axios.get(`http://localhost:8080/SpringReact/products/${id}`);
+const res= await axios.get(`http://localhost:8080/SpringReact/footwares/${id}`);
 dispatch({
 type:GET_FOOTWARE,
 payload:res.data

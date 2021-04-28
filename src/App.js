@@ -12,6 +12,8 @@ import {Provider} from 'react-redux';
 import store from'./store';
 import MensAdd  from './component/MensAdd';
 import FootwareItem from './component/FootwareItem';
+import Footware from './component/Footware';
+
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
        <Route path="/Login" component={Login}/>   
        <Route path="/MenCompo" component={MenCompo}/>   
        <Route path="/MensAdd" component={MensAdd}/>  
-       <Route path="/Footware" component={FootwareItem}/> 
+       <Route path="/Footware" component={Footware}/> 
       </Router>
            <Button type="primary">Primary Button</Button>
 

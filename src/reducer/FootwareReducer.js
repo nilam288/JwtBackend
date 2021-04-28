@@ -6,6 +6,7 @@ const initialState={
     footware:{}
 };
 export default function(state=initialState,action){
+    console.log("reducer..................."+JSON.stringify(action));
     switch(action.type){
         case GET_FOOTWARES:
         return {
